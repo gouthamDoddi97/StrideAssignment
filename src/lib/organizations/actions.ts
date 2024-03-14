@@ -36,7 +36,6 @@ export const createNewOrganizationAction = withSession(
     const client = getSupabaseServerActionClient();
     const session = await requireSession(client);
     const userId = session.user.id;
-
     logger.info(
       {
         userId,

@@ -56,8 +56,10 @@ const configuration = {
     onboarding: `/onboarding`,
     appPrefix: '/dashboard',
     appHome: '/dashboard',
+    bots: 'bots',
     authCallback: '/auth/callback',
     settings: {
+      addUser: 'settings/add-member',
       profile: 'settings/profile',
       organization: 'settings/organization',
       subscription: 'settings/subscription',

@@ -37,7 +37,7 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     ".contentlayer/generated"
-  ],
+, "src/app/dashboard/[organization]/settings/add-member/crud.js", "src/app/dashboard/[organization]/settings/add-member/apis.js"  ],
   "exclude": [
     "node_modules",
     ".next"

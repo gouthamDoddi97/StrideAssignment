@@ -1,4 +1,5 @@
 import './globals.css';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 
 import { cookies } from 'next/headers';
 import classNames from 'clsx';
@@ -23,7 +24,9 @@ export default async function RootLayout({
       <Fonts />
       <ThemeSetter />
 
-      <body>{children}</body>
+      <body>
+        <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
+      </body>
     </html>
   );
 }

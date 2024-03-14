@@ -29,6 +29,7 @@ export default function isRouteActive(
   if (isSameRoute) {
     return true;
   }
+  // console.log(hasMatchingSegments(targetLink, currentRoutePath, depth), targetLink, currentRoutePath, depth);
 
   return hasMatchingSegments(targetLink, currentRoutePath, depth);
 }

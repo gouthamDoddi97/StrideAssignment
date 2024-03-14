@@ -1,8 +1,10 @@
 import {
+  CogIcon,
   CreditCardIcon,
   Squares2X2Icon,
   UserGroupIcon,
   UserIcon,
+  UsersIcon,
 } from '@heroicons/react/24/outline';
 
 import configuration from '~/configuration';
@@ -37,11 +39,31 @@ const NAVIGATION_CONFIG = (organization: string): NavigationConfig => ({
   items: [
     {
       label: 'common:dashboardTabLabel',
-      path: getPath(organization, ''),
-      Icon: ({ className }: { className: string }) => {
-        return <Squares2X2Icon className={className} />;
-      },
-      end: true,
+      collapsible: false,
+      children: [
+        {
+          label: 'common:dashboardTabLabel',
+          path: getPath(organization, ''),
+          Icon: ({ className }: { className: string }) => {
+            return <Squares2X2Icon className={className} />;
+          },
+          end: true,
+        },
+      ],
+    },
+    {
+      label: 'Bots',
+      collapsible: false,
+      children: [
+        {
+          label: 'Bots',
+          path: getPath(organization, configuration.paths.bots),
+          Icon: ({ className }: { className: string }) => {
+            return <CogIcon className={className} />;
+          },
+          end: true,
+        },
+      ],
     },
     {
       label: 'common:settingsTabLabel',
@@ -66,6 +88,13 @@ const NAVIGATION_CONFIG = (organization: string): NavigationConfig => ({
           path: getPath(organization, paths.subscription),
           Icon: ({ className }: { className: string }) => {
             return <CreditCardIcon className={className} />;
+          },
+        },
+        {
+          label: 'Members',
+          path: getPath(organization, paths.addUser),
+          Icon: ({ className }: { className: string }) => {
+            return <UsersIcon className={className} />;
           },
         },
       ],

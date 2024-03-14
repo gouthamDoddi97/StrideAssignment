@@ -15,6 +15,7 @@ const Tile: React.FCC & {
   Figure: typeof TileFigure;
   Trend: typeof TileTrend;
   Badge: typeof TileBadge;
+  DateBadge: typeof TileTrendLessTrend;
 } = ({ children }) => {
   return (
     <div
@@ -34,7 +35,7 @@ function TileHeader(props: React.PropsWithChildren) {
 
 function TileHeading(props: React.PropsWithChildren) {
   return (
-    <Heading type={6}>
+    <Heading type={6} className="mt-auto mb-auto">
       <span className={'font-normal text-gray-500 dark:text-gray-400'}>
         {props.children}
       </span>
@@ -110,11 +111,22 @@ function TileBadge(
   );
 }
 
+function TileTrendLessTrend(props: React.PropsWithChildren) {
+  return (
+    <TileBadge trend="up">
+      <span className={'flex items-center space-x-1'}>
+        <span>{props.children}</span>
+      </span>
+    </TileBadge>
+  );
+}
+
 Tile.Header = TileHeader;
 Tile.Heading = TileHeading;
 Tile.Body = TileBody;
 Tile.Figure = TileFigure;
 Tile.Trend = TileTrend;
 Tile.Badge = TileBadge;
+Tile.DateBadge = TileTrendLessTrend;
 
 export default Tile;
